@@ -7,11 +7,11 @@ The studio site for Stunity Tech — Prateek Heda's software, UI and fix-it prac
 | Section | What it does |
 |---|---|
 | Hero | The headline has an **x-ray lens**: move the cursor over it and a blueprint layer shows the real CSS underneath — sizes, weights, colours, spacing — read live from the page |
-| 01 Craft | An invoice screen that **builds itself as you scroll**: structure → type → colour → depth → motion → accessibility, ending with contrast ratios measured on the spot |
-| 02 Fix-it clinic | Pick a symptom ("we redo the same Excel sheet every week") and a **prescription prints** — diagnosis, treatment, typical time, proof. "Book this fix" carries it into the contact form |
-| 03 Revamp | A **before/after slider** between a 2009 enterprise screen and its redesign — same fields, same backend |
-| 04 Lab | Three **working tools**: list cleaner, WCAG contrast checker, image shrinker. Nothing is uploaded |
-| 05 Work | The live projects, with a preview that follows the cursor |
+| 01 Fix-it clinic | Pick a symptom ("we redo the same Excel sheet every week") and a **prescription prints** — diagnosis, treatment, typical time, proof. "Book this fix" carries it into the contact form |
+| 02 Revamp | A **before/after slider** between a 2009 enterprise screen and its redesign — same fields, same backend |
+| 03 Lab | Three **working tools**: list cleaner, WCAG contrast checker, image shrinker. Nothing is uploaded |
+| 04 Work | The live projects, with a preview that follows the cursor |
+| 05 Craft | An invoice screen that **builds itself as you scroll**: structure → type → colour → depth → motion → accessibility, ending with contrast ratios measured on the spot |
 | 06 The person | Profile card and skills as `prateek.config.ts`, typed in line by line |
 | Contact | Opens WhatsApp or email with the message already written |
 

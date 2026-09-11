@@ -50,10 +50,10 @@
     </a>
 
     <nav class="nav-links" aria-label="Sections">
-      <a href="#craft">Craft</a>
       <a href="#clinic">Fix-it clinic</a>
       <a href="#lab">Lab</a>
       <a href="#work">Work</a>
+      <a href="#craft">Craft</a>
       <a href="#prateek">Prateek</a>
     </nav>
 
@@ -111,86 +111,10 @@
       </div>
     </section>
 
-    <!-- ============================ CRAFT ============================ -->
-    <section class="sec craft" id="craft">
-      <header class="sec-head reveal">
-        <span class="sec-num">01 — Craft</span>
-        <h2>Watch a screen <em>get built.</em></h2>
-        <p>Every interface we ship goes through the same six passes. Scroll, and the invoice screen on the right goes through them too.</p>
-      </header>
-
-      <div class="craft-grid">
-        <ol class="craft-steps">
-          <li class="craft-step" data-stage="1">
-            <span class="k">01 / Structure</span>
-            <h3>Boxes before beauty.</h3>
-            <p>What goes where, and why. The layout comes from what you need to <i>do</i> on the screen, not from what looks busy.</p>
-          </li>
-          <li class="craft-step" data-stage="2">
-            <span class="k">02 / Type</span>
-            <h3>Hierarchy you read at a glance.</h3>
-            <p>One typeface, a strict scale, real words. The amount due is the loudest thing on the screen because it is the thing that matters.</p>
-          </li>
-          <li class="craft-step" data-stage="3">
-            <span class="k">03 / Colour</span>
-            <h3>Colour that means something.</h3>
-            <p>One accent for action, one signal for status. Nothing is coloured just to decorate it.</p>
-          </li>
-          <li class="craft-step" data-stage="4">
-            <span class="k">04 / Depth</span>
-            <h3>Surfaces with weight.</h3>
-            <p>Radius, shadow and layering tell your eye what can be pressed and what sits behind it.</p>
-          </li>
-          <li class="craft-step" data-stage="5">
-            <span class="k">05 / Motion</span>
-            <h3>Feedback for every tap.</h3>
-            <p>The button answers, the switch slides, the total settles. Motion explains what happened. It never shows off.</p>
-          </li>
-          <li class="craft-step" data-stage="6">
-            <span class="k">06 / Access</span>
-            <h3>Built for everyone who uses it.</h3>
-            <p>Keyboard focus, labels for screen readers, contrast measured against WCAG. I've delivered 508 compliance for clients — here it is measured live, not claimed.</p>
-          </li>
-        </ol>
-
-        <div class="craft-sticky">
-          <div class="device" id="device" data-stage="1">
-            <div class="d-stage-tag"><span id="dStageNum">1</span>/6 · <span id="dStageName">structure</span></div>
-            <div class="d-bar"><i></i><i></i><i></i><span class="w">Invoices</span></div>
-            <div class="d-body">
-              <div class="d-head">
-                <div>
-                  <span class="d-label w">Invoice #1042</span>
-                  <span class="d-client w">Sharma Traders, Pune</span>
-                </div>
-                <span class="d-pill w">Due in 3 days</span>
-              </div>
-              <div class="d-amount w" id="dAmount" data-a11y-contrast>₹47,200</div>
-              <ul class="d-lines">
-                <li><span class="w">Website redesign</span><span class="w">₹30,000</span></li>
-                <li><span class="w">Billing utility</span><span class="w">₹5,000</span></li>
-                <li><span class="w">Hosting &amp; domain · 1 yr</span><span class="w">₹5,000</span></li>
-                <li class="d-tax"><span class="w">GST 18%</span><span class="w">₹7,200</span></li>
-              </ul>
-              <div class="d-row">
-                <span class="w">WhatsApp reminder</span>
-                <button class="d-switch" id="dSwitch" type="button" role="switch" aria-checked="true" aria-label="WhatsApp reminder"><i></i></button>
-              </div>
-              <button class="d-pay w" id="dPay" type="button" data-a11y-contrast>Send invoice</button>
-            </div>
-            <!-- a11y annotations, shown only at stage 6; contrast values are measured by assembly.js -->
-            <span class="a11y-tag t-amount">contrast <b id="cAmount">—</b></span>
-            <span class="a11y-tag t-switch">role=switch · aria-checked</span>
-            <span class="a11y-tag t-pay">contrast <b id="cPay">—</b> · focusable</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============================ CLINIC ============================ -->
     <section class="sec clinic" id="clinic">
       <header class="sec-head reveal">
-        <span class="sec-num">02 — Fix-it clinic</span>
+        <span class="sec-num">01 — Fix-it clinic</span>
         <h2>Tell us the symptom.<br><em>We'll write the prescription.</em></h2>
         <p>Most software problems are ordinary ones. Pick what sounds like yours — you'll get the diagnosis, the treatment, and roughly what it takes.</p>
       </header>
@@ -208,7 +132,7 @@
     <!-- ============================ REVAMP ============================ -->
     <section class="sec revamp" id="revamp">
       <header class="sec-head reveal">
-        <span class="sec-num">03 — Revamp</span>
+        <span class="sec-num">02 — Revamp</span>
         <h2>Same backend. <em>New front end.</em></h2>
         <p>Your old system still does its job — people just hate using it. We rebuild the screens and leave the business logic exactly where it is. Drag the handle.</p>
       </header>
@@ -258,7 +182,7 @@
     <!-- ============================ LAB ============================ -->
     <section class="sec lab" id="lab">
       <header class="sec-head reveal">
-        <span class="sec-num">04 — Lab</span>
+        <span class="sec-num">03 — Lab</span>
         <h2>Small tools, <em>working right here.</em></h2>
         <p>We build utilities that do one job well — no sign-up, no subscription, nothing uploaded. These three run entirely in your browser. Try them.</p>
       </header>
@@ -343,12 +267,88 @@ suresh  patil</textarea>
     <!-- ============================ WORK ============================ -->
     <section class="sec work" id="work">
       <header class="sec-head reveal">
-        <span class="sec-num">05 — Work</span>
+        <span class="sec-num">04 — Work</span>
         <h2>Shipped, live, <em>and in use.</em></h2>
         <p>Built after hours under the Stunity Tech name. Every one of these is live — open it and try it.</p>
       </header>
       <ol class="work-list" id="workList"></ol>
       <div class="work-float" id="workFloat" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============================ CRAFT ============================ -->
+    <section class="sec craft" id="craft">
+      <header class="sec-head reveal">
+        <span class="sec-num">05 — Craft</span>
+        <h2>Watch a screen <em>get built.</em></h2>
+        <p>Every interface we ship goes through the same six passes. Scroll, and the invoice screen on the right goes through them too.</p>
+      </header>
+
+      <div class="craft-grid">
+        <ol class="craft-steps">
+          <li class="craft-step" data-stage="1">
+            <span class="k">01 / Structure</span>
+            <h3>Boxes before beauty.</h3>
+            <p>What goes where, and why. The layout comes from what you need to <i>do</i> on the screen, not from what looks busy.</p>
+          </li>
+          <li class="craft-step" data-stage="2">
+            <span class="k">02 / Type</span>
+            <h3>Hierarchy you read at a glance.</h3>
+            <p>One typeface, a strict scale, real words. The amount due is the loudest thing on the screen because it is the thing that matters.</p>
+          </li>
+          <li class="craft-step" data-stage="3">
+            <span class="k">03 / Colour</span>
+            <h3>Colour that means something.</h3>
+            <p>One accent for action, one signal for status. Nothing is coloured just to decorate it.</p>
+          </li>
+          <li class="craft-step" data-stage="4">
+            <span class="k">04 / Depth</span>
+            <h3>Surfaces with weight.</h3>
+            <p>Radius, shadow and layering tell your eye what can be pressed and what sits behind it.</p>
+          </li>
+          <li class="craft-step" data-stage="5">
+            <span class="k">05 / Motion</span>
+            <h3>Feedback for every tap.</h3>
+            <p>The button answers, the switch slides, the total settles. Motion explains what happened. It never shows off.</p>
+          </li>
+          <li class="craft-step" data-stage="6">
+            <span class="k">06 / Access</span>
+            <h3>Built for everyone who uses it.</h3>
+            <p>Keyboard focus, labels for screen readers, contrast measured against WCAG. I've delivered 508 compliance for clients — here it is measured live, not claimed.</p>
+          </li>
+        </ol>
+
+        <div class="craft-sticky">
+          <div class="device" id="device" data-stage="1">
+            <div class="d-stage-tag"><span id="dStageNum">1</span>/6 · <span id="dStageName">structure</span></div>
+            <div class="d-bar"><i></i><i></i><i></i><span class="w">Invoices</span></div>
+            <div class="d-body">
+              <div class="d-head">
+                <div>
+                  <span class="d-label w">Invoice #1042</span>
+                  <span class="d-client w">Sharma Traders, Pune</span>
+                </div>
+                <span class="d-pill w">Due in 3 days</span>
+              </div>
+              <div class="d-amount w" id="dAmount" data-a11y-contrast>₹47,200</div>
+              <ul class="d-lines">
+                <li><span class="w">Website redesign</span><span class="w">₹30,000</span></li>
+                <li><span class="w">Billing utility</span><span class="w">₹5,000</span></li>
+                <li><span class="w">Hosting &amp; domain · 1 yr</span><span class="w">₹5,000</span></li>
+                <li class="d-tax"><span class="w">GST 18%</span><span class="w">₹7,200</span></li>
+              </ul>
+              <div class="d-row">
+                <span class="w">WhatsApp reminder</span>
+                <button class="d-switch" id="dSwitch" type="button" role="switch" aria-checked="true" aria-label="WhatsApp reminder"><i></i></button>
+              </div>
+              <button class="d-pay w" id="dPay" type="button" data-a11y-contrast>Send invoice</button>
+            </div>
+            <!-- a11y annotations, shown only at stage 6; contrast values are measured by assembly.js -->
+            <span class="a11y-tag t-amount">contrast <b id="cAmount">—</b></span>
+            <span class="a11y-tag t-switch">role=switch · aria-checked</span>
+            <span class="a11y-tag t-pay">contrast <b id="cPay">—</b> · focusable</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================ PRATEEK ============================ -->
