@@ -12,18 +12,22 @@ The studio site for Stunity Tech — Prateek Heda's software, UI and fix-it prac
 | 03 Revamp | A **before/after slider** between a 2009 enterprise screen and its redesign — same fields, same backend |
 | 04 Lab | Three **working tools**: list cleaner, WCAG contrast checker, image shrinker. Nothing is uploaded |
 | 05 Work | The live projects, with a preview that follows the cursor |
-| 06 The person | Career as a `git log --graph`, skills as `prateek.config.ts`, awards |
+| 06 The person | Profile card and skills as `prateek.config.ts`, typed in line by line |
 | Contact | Opens WhatsApp or email with the message already written |
 
 Press **I** anywhere (or the Inspect button) and the whole site becomes a live
 style inspector. The theme toggle ripples the new theme out from the button.
+Section headings are drawn as outlines and then painted in, the small labels
+decode into place, cards light up along the edge nearest the cursor, and the
+footer reports this page's real load — time, files, bytes and third-party
+requests — measured in the visitor's own browser.
 
 ## Change the details
 
 - **Phone, email, links:** `js/config.js`
 - **Clinic problems:** `SYMPTOMS` in `js/clinic.js`
 - **Projects:** `PROJECTS` in `js/work.js`
-- **Career, awards, skills:** `js/story.js`
+- **Skills card:** `CONFIG` in `js/story.js`
 - **Headline, bio, section text:** `index.html`
 
 ## Run it

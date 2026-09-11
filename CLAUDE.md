@@ -37,8 +37,9 @@ js/clinic.js      SYMPTOMS data → printed prescription receipts
 js/revamp.js      before/after slider (legacy screen vs revamp)
 js/lab.js         list cleaner, contrast checker, image shrinker
 js/work.js        PROJECTS data → index list with floating previews
-js/story.js       LOG / AWARDS / CONFIG from Prateek's résumé
+js/story.js       CONFIG (skills from Prateek's résumé) + hero stat counters
 js/contact.js     fills data-cfg fields, credit, WhatsApp/email form
+js/effects.js     decoding labels, painted headings, spotlight edges, footer vitals
 js/boot.js        reveals, nav state, ruler, magnetic buttons, then every init
 ```
 
@@ -49,7 +50,11 @@ js/boot.js        reveals, nav state, ruler, magnetic buttons, then every init
 | Phone, email, LinkedIn, GitHub | `js/config.js` |
 | Clinic problems and fixes | `SYMPTOMS` in `js/clinic.js` |
 | Portfolio projects | `PROJECTS` in `js/work.js` |
-| Career, awards, skills | `LOG`, `AWARDS`, `CONFIG` in `js/story.js` |
+| Skills card | `CONFIG` in `js/story.js` |
+
+The hero's "Products shipped" counts `PROJECTS`, so it updates itself. Prateek
+removed the career timeline, the awards and the Academy Dashboard (Report
+Generator) project on purpose — don't bring them back.
 | Hero, section headings, bio | `index.html` |
 
 ## Gotchas
@@ -63,6 +68,9 @@ js/boot.js        reveals, nav state, ruler, magnetic buttons, then every init
 - **The craft device has its own light palette** in both site themes.
 - **`zoom`, not `transform`, shrinks the device on phones**, so its layout box
   shrinks too and the step text has room below it.
+- **Section headings are transparent while they paint in** (outline, then a
+  background-clip sweep). `effects.js` adds `.painted` after ~1.9s to hand
+  back solid text; if a heading ever looks hollow, that class never landed.
 - **`[hidden]` needs `!important`** (top of `base.css`) — the lab tabs rely on it.
 - **`?theme=light|dark`** forces a theme without touching storage; that's how
   screenshots get both themes.

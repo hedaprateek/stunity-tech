@@ -60,7 +60,7 @@
   function start() {
     [
       ['theme', A.initTheme], ['contact', A.initContact], ['reveals', initReveals], ['nav', initNav],
-      ['ruler', initRuler], ['magnets', initMagnets], ['xray', A.initXray], ['inspect', A.initInspect],
+      ['ruler', initRuler], ['magnets', initMagnets], ['xray', A.initXray], ['effects', A.initEffects], ['inspect', A.initInspect],
       ['assembly', A.initAssembly], ['clinic', A.initClinic], ['revamp', A.initRevamp], ['lab', A.initLab],
       ['work', A.initWork], ['story', A.initStory]
     ].forEach(function (step) {

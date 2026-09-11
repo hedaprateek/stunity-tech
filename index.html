@@ -105,7 +105,7 @@
         <dl class="hero-stats">
           <div><dt>Years shipping UI</dt><dd><span data-count="12">12</span>+</dd></div>
           <div><dt>Developers led</dt><dd><span data-count="14">14</span></dd></div>
-          <div><dt>Products shipped</dt><dd><span data-count="5">5</span></dd></div>
+          <div><dt>Products shipped</dt><dd><span id="statProducts" data-count="7">7</span></dd></div>
           <div><dt>Industries</dt><dd><span data-count="6">6</span></dd></div>
         </dl>
       </div>
@@ -263,7 +263,7 @@
         <p>We build utilities that do one job well — no sign-up, no subscription, nothing uploaded. These three run entirely in your browser. Try them.</p>
       </header>
 
-      <div class="lab-shell reveal">
+      <div class="lab-shell spot reveal">
         <div class="lab-tabs" role="tablist" aria-label="Tools">
           <button role="tab" id="tab-clean" aria-controls="panel-clean" aria-selected="true">List cleaner</button>
           <button role="tab" id="tab-contrast" aria-controls="panel-contrast" aria-selected="false" tabindex="-1">Contrast checker</button>
@@ -359,34 +359,23 @@ suresh  patil</textarea>
       </header>
 
       <div class="person-grid">
-        <div class="person-card reveal">
+        <div class="person-card spot reveal">
           <div class="monogram" aria-hidden="true"><span>PH</span><i></i></div>
           <h3>Prateek Heda</h3>
           <p class="person-role">UI Technical Lead · Frontend Architect · Engineering Lead</p>
           <p class="person-loc" data-cfg="city">Pune, India</p>
           <p class="person-bio">I started as a Java developer in 2013, moved to the front end because that's where people actually meet software, and never looked back. Twelve years on, I lead UI teams by day — most recently rebuilding legacy enterprise screens without touching the backend beneath them.</p>
-          <p class="person-bio">Stunity Tech is where I build directly for people: schools, investors, small businesses. Same standards as enterprise work, without the layers in between.</p>
+          <p class="person-bio">Stunity Tech is where I build directly for people: housing societies, families, small businesses and investors. Same standards as enterprise work, without the layers in between.</p>
           <div class="person-links">
             <a class="btn btn-sm btn-ghost" data-cfg-href="linkedin" href="https://www.linkedin.com/in/hedaprateek" target="_blank" rel="noopener">LinkedIn ↗</a>
             <a class="btn btn-sm btn-ghost" data-cfg-href="github" href="https://github.com/hedaprateek" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
 
-        <div class="term reveal">
-          <div class="term-bar"><i></i><i></i><i></i><span>~/prateek — career</span></div>
-          <div class="term-body">
-            <p class="term-cmd"><span class="term-ps">$</span> git log --graph --oneline --career</p>
-            <ol class="gitlog" id="gitlog"></ol>
-          </div>
-        </div>
-      </div>
-
-      <div class="person-grid person-grid-2">
         <div class="term code reveal">
           <div class="term-bar"><i></i><i></i><i></i><span>prateek.config.ts</span></div>
           <pre class="code-body" id="configCode"></pre>
         </div>
-        <ul class="awards reveal" id="awards"></ul>
       </div>
     </section>
 
@@ -398,7 +387,7 @@ suresh  patil</textarea>
       </div>
 
       <div class="contact-grid">
-        <form class="contact-form reveal" id="contactForm" novalidate>
+        <form class="contact-form spot reveal" id="contactForm" novalidate>
           <h2 class="sr-only">Contact Stunity Tech</h2>
           <label class="field"><span>Your name</span><input id="cName" autocomplete="name" required></label>
           <label class="field"><span>What do you need?</span>
@@ -436,6 +425,8 @@ suresh  patil</textarea>
       <span>© <span id="year">2026</span> Stunity Tech · Pune, India</span>
       <span class="foot-note">Hand-built. No templates, no frameworks, no trackers. Press <span class="kbd">I</span> and look.</span>
     </div>
+    <!-- Filled by effects.js from the browser's own performance timings -->
+    <p class="vitals" id="vitals"></p>
     <!-- The studio credit, same wording everywhere; filled from config.js -->
     <div class="vendor-footer" id="vendorFooter"><b>Stunity Tech</b><span class="vf-dot">·</span>by Prateek</div>
   </footer>
@@ -454,6 +445,7 @@ suresh  patil</textarea>
   <script src="js/work.js"></script>
   <script src="js/story.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/effects.js"></script>
   <script src="js/boot.js"></script>
 </body>
 </html>

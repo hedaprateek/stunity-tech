@@ -21,7 +21,7 @@
       diagnosis: 'A repetitive job that a small tool could do in seconds.',
       treatment: ['Map what goes into the sheet and what has to come out', 'Build a tool that imports your Excel as it is today', 'Output print- and PDF-ready documents', 'Show your staff how to use it in fifteen minutes'],
       time: '1–3 weeks',
-      proof: { text: 'Report Generator — a class\'s marks sheet in, printed report cards out', url: 'https://hedaprateek.github.io/report-generator/' },
+      proof: { text: 'Society Directory — a committee\'s Excel file is the whole database', url: 'https://society-info.hedaprateek.workers.dev/' },
       topic: 'A custom tool or utility'
     },
     {
@@ -110,7 +110,7 @@
     var busy;
 
     list.innerHTML = SYMPTOMS.map(function (s, i) {
-      return '<button class="sym" type="button" aria-pressed="false" data-i="' + i + '"><span class="n">' + ('0' + (i + 1)).slice(-2) + '</span>' + A.esc(s.label) + '</button>';
+      return '<button class="sym spot" type="button" aria-pressed="false" data-i="' + i + '"><span class="n">' + ('0' + (i + 1)).slice(-2) + '</span>' + A.esc(s.label) + '</button>';
     }).join('');
 
     receipt.innerHTML = '<div class="receipt-empty"><b>The printer\'s warmed up.</b>Pick a symptom, and your prescription prints here.</div>';

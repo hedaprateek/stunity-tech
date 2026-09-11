@@ -322,6 +322,39 @@ main { position: relative; }
 }
 .inspecting .insp-banner { transform: translate(-50%, 0); }
 
+/* ---------- painted headings (effects.js) ---------- */
+/* Drawn as outlines first, then painted left to right as they scroll in.
+   effects.js adds .painted once the sweep is done so the heading is plain
+   solid text again — Inspect mode must read a real colour, not transparent. */
+.sec-head h2 { --paint: var(--ink); }
+.sec-head h2 em { --paint: var(--ink-2); }
+.js .sec-head h2:not(.painted), .js .sec-head h2:not(.painted) em {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line-2);
+  background: linear-gradient(90deg, var(--paint) 0 50%, transparent 50%) 100% 0 / 200% 100% no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  transition: background-position 1.3s var(--ease) .2s;
+}
+.js .sec-head.in h2:not(.painted), .js .sec-head.in h2:not(.painted) em { background-position: 0 0; }
+
+/* ---------- spotlight edges (effects.js) ---------- */
+/* A 1px ring (masked to the border) lit where the cursor is. */
+.spot { position: relative; }
+.spot::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  border-radius: inherit; padding: 1px;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 85%, transparent), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity .35s var(--ease);
+}
+.spot:hover::after { opacity: 1; }
+
+/* ---------- page vitals (effects.js) ---------- */
+.vitals { margin: 18px 0 0; text-align: center; font: 11.5px/1.6 var(--f-mono); color: var(--ink-3); }
+.vitals:empty { display: none; }
+.v-dot { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 8px var(--ok); vertical-align: 1px; animation: blink 1.6s steps(2) infinite; }
+
 /* ---------- theme ripple (theme.js) ---------- */
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
 .vt-lock *, .vt-lock *::before, .vt-lock *::after { transition: none !important; }
