@@ -1,0 +1,103 @@
+/* =====================================================================
+   Lab: three working utilities in a tabbed shell.
+   ===================================================================== */
+
+.lab-shell { border-radius: 28px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.lab-tabs { display: flex; gap: 4px; padding: 8px; background: var(--bg-2); border-bottom: 1px solid var(--line); overflow-x: auto; }
+.lab-tabs button {
+  flex: none; padding: 11px 18px;
+  border: 0; border-radius: 14px; background: transparent;
+  color: var(--ink-2); font-size: 14.5px; font-weight: 650; white-space: nowrap;
+  transition: background-color .25s, color .25s, box-shadow .25s;
+}
+.lab-tabs button:hover { color: var(--ink); }
+.lab-tabs button[aria-selected="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 0 0 1px var(--line-2), 0 8px 18px -12px rgba(0, 0, 0, .6); }
+.lab-panel { padding: clamp(18px, 3vw, 32px); animation: panel-in .45s var(--ease); }
+@keyframes panel-in { from { opacity: 0; transform: translateY(8px); } }
+
+/* list cleaner */
+.lab-io { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.lab-io textarea { font: 14px/1.55 var(--f-mono) !important; min-height: 262px; }
+.lab-out {
+  margin: 0; height: 262px; overflow: auto;
+  padding: 13px 15px; border-radius: 14px;
+  border: 1px dashed var(--line-2); background: var(--bg-2);
+  font: 14px/1.55 var(--f-mono); white-space: pre-wrap;
+}
+.lab-out .ln { display: block; animation: ln-in .35s var(--ease) both; }
+.lab-out .ln.fixed { color: var(--ok); }
+.lab-out .ln .t { color: var(--ink-3); font-size: 11px; margin-left: 8px; }
+@keyframes ln-in { from { opacity: 0; transform: translateX(-6px); } }
+.lab-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 18px; }
+.chk { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); cursor: pointer; }
+.chk input { width: 17px; height: 17px; accent-color: var(--accent); }
+.lab-stat { margin-left: auto; font: 13px/1.4 var(--f-mono); color: var(--ink-3); }
+.lab-stat b { color: var(--ok); }
+
+/* contrast checker */
+.contrast-grid { display: grid; grid-template-columns: minmax(200px, 230px) 1fr minmax(210px, 260px); gap: 22px; align-items: stretch; }
+.contrast-inputs { display: grid; gap: 16px; align-content: start; }
+.color-row { display: flex; gap: 8px; }
+.color-row input[type="color"] { flex: none; width: 52px; height: 50px; padding: 4px; border-radius: 14px; border: 1px solid var(--line-2); background: var(--panel); cursor: pointer; }
+.color-row input[type="text"] { font-family: var(--f-mono) !important; text-transform: lowercase; }
+.contrast-preview {
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 250px; padding: 26px 28px;
+  border-radius: 22px; border: 1px solid var(--line);
+  transition: background-color .3s, color .3s;
+}
+.cp-ratio { display: flex; align-items: baseline; gap: 4px; }
+.cp-ratio b { font: 800 clamp(48px, 6vw, 72px)/1 var(--f-display); letter-spacing: -.05em; }
+.cp-ratio span { font-size: 22px; font-weight: 700; }
+.cp-big { margin: 14px 0 6px; font: 700 26px/1.2 var(--f-display); letter-spacing: -.02em; }
+.cp-small { margin: 0; font-size: 15px; max-width: 420px; }
+.contrast-verdicts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; align-content: start; }
+.contrast-verdicts li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; background: var(--bg-2); font-size: 14px; }
+.contrast-verdicts small { display: block; color: var(--ink-3); font-size: 12px; }
+.verdict { padding: 4px 9px; border-radius: 8px; font: 800 11px/1 var(--f-mono); letter-spacing: .06em; }
+.verdict.pass { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
+.verdict.fail { background: color-mix(in srgb, var(--bad) 16%, transparent); color: var(--bad); }
+.contrast-verdicts li.contrast-tip { display: block; background: none; }
+.contrast-tip { padding: 12px 14px; border-radius: 14px; border: 1px dashed var(--line-2); font-size: 13px; color: var(--ink-2); }
+.contrast-tip button { margin-top: 8px; padding: 0; border: 0; background: none; color: var(--accent); font-weight: 700; text-decoration: underline; }
+
+/* image shrinker */
+.drop {
+  position: relative;
+  display: grid; justify-items: center; gap: 8px;
+  padding: 46px 20px; text-align: center;
+  border: 1.5px dashed var(--line-2); border-radius: 22px;
+  cursor: pointer;
+  transition: border-color .25s, background-color .25s;
+}
+.drop:hover, .drop.over { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.drop:focus-within { outline: 2px solid var(--blue); outline-offset: 3px; }
+.drop-icon { font-size: 34px; line-height: 1; color: var(--accent); }
+.drop small { max-width: 440px; color: var(--ink-3); }
+.shrink-result { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 22px; align-items: start; }
+.shrink-thumb {
+  aspect-ratio: 4 / 3; max-width: 100%; border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+  background: repeating-conic-gradient(var(--bg-2) 0 25%, var(--panel) 0 50%) 0 0 / 20px 20px;
+}
+.shrink-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.shrink-info { display: grid; gap: 18px; }
+.shrink-nums { display: flex; align-items: center; gap: 18px; }
+.shrink-nums span { display: block; font: 600 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.shrink-nums b { display: block; margin-top: 6px; font: 750 30px/1 var(--f-display); letter-spacing: -.04em; }
+.shrink-nums .arrow { font-size: 24px; color: var(--ink-3); }
+.shrink-saved { font-weight: 700; color: var(--ok); }
+.shrink-info input[type="range"] { width: 100%; accent-color: var(--accent); }
+.shrink-info .field > span b { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .lab-io, .shrink-result { grid-template-columns: 1fr; }
+  .contrast-grid { grid-template-columns: 1fr; }
+  .contrast-inputs { grid-template-columns: 1fr 1fr; align-items: end; }
+  .lab-out { height: 220px; }
+  .lab-io textarea { min-height: 220px; }
+}
+@media (max-width: 480px) {
+  .contrast-inputs { grid-template-columns: 1fr; }
+  .lab-stat { margin-left: 0; width: 100%; }
+}

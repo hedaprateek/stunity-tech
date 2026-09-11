@@ -1,0 +1,28 @@
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# Local Claude overrides — settings.json IS committed, .local.json is not
+.claude/settings.local.json
+
+# Build output and scratch
+dist/
+coverage/
+tmp/
+*.log
+
+# Screenshots from /verify
+.verify/

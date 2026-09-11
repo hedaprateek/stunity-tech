@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stunity Tech — Interfaces that stun. Software that simply works.</title>
+  <meta name="description" content="Stunity Tech is Prateek Heda's software studio in Pune: websites, business software, small utilities, legacy UI revamps and fixes for everyday software problems.">
+  <meta name="theme-color" content="#0A0B0F">
+  <meta property="og:title" content="Stunity Tech — Interfaces that stun. Software that simply works.">
+  <meta property="og:description" content="Websites, business software, utilities and fixes — by Prateek Heda, 12+ years of front-end craft.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Set the theme before the first paint so a light-mode visitor never sees
+       a dark flash. ?theme=light|dark wins without touching storage, which is
+       how the screenshot check gets both themes. -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = new URLSearchParams(location.search).get('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        try { t = localStorage.getItem('stunity-tech.theme'); } catch (e) {}
+      }
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      // Scroll reveals only hide content once we know JS is here to show it.
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/lab.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Stunity Tech — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="9" class="bm-bg"/>
+        <path d="M21.5 10.5h-7.25a3.75 3.75 0 0 0 0 7.5h3.5a3.75 3.75 0 0 1 0 7.5H10.5" class="bm-s"/>
+        <circle cx="24.5" cy="7.5" r="2.6" class="bm-dot"/>
+      </svg>
+      <span class="brand-word">Stunity<b>Tech</b></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#craft">Craft</a>
+      <a href="#clinic">Fix-it clinic</a>
+      <a href="#lab">Lab</a>
+      <a href="#work">Work</a>
+      <a href="#prateek">Prateek</a>
+    </nav>
+
+    <div class="nav-tools">
+      <button class="icon-btn inspect-btn" id="inspectToggle" type="button" aria-pressed="false" title="Inspect this site (press I)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6M4 4v6M20 4h-6M20 4v6M4 20h6M4 20v-6M20 20h-6M20 20v-6"/><circle cx="12" cy="12" r="2.5"/></svg>
+        <span>Inspect</span>
+      </button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <a class="btn btn-accent btn-sm nav-cta" href="#contact">Start a project</a>
+    </div>
+  </header>
+
+  <!-- A measuring ruler down the right edge: the page's scroll position in
+       pixels, because this is a site about building interfaces precisely. -->
+  <aside class="ruler" id="ruler" aria-hidden="true">
+    <div class="ruler-ticks"></div>
+    <div class="ruler-mark" id="rulerMark"><span id="rulerReadout">y 0</span></div>
+  </aside>
+
+  <main id="main">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="top">
+      <div class="hero-stage" id="heroStage">
+        <div class="hero-layer hero-final" id="heroFinal">
+          <p class="eyebrow" data-spec="eyebrow"><span class="pulse"></span>Stunity Tech — a software studio from Pune</p>
+          <h1 class="hero-title" data-spec="h1">
+            <span class="ht-line"><span>Interfaces</span></span>
+            <span class="ht-line"><span>that <em>stun.</em></span></span>
+            <span class="ht-line ht-soft"><span>Software that</span></span>
+            <span class="ht-line ht-soft"><span>simply works.</span></span>
+          </h1>
+          <p class="hero-lede" data-spec="lede">We design and build websites, business software and small utilities — and we fix the everyday software problems that quietly eat your week. Twelve years of front-end craft, now working directly for you.</p>
+          <div class="hero-ctas" data-spec="actions">
+            <a class="btn btn-accent" href="#clinic">Describe your problem <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#work">See the work</a>
+          </div>
+        </div>
+        <!-- xray.js clones #heroFinal here as the blueprint layer -->
+        <div class="lens-ring" id="lensRing" aria-hidden="true"><span>x-ray</span></div>
+      </div>
+
+      <div class="hero-foot">
+        <p class="hero-hint"><span class="kbd">↖</span> Move over the headline — that's the x-ray. Press <span class="kbd">I</span> to inspect any part of this page.</p>
+        <dl class="hero-stats">
+          <div><dt>Years shipping UI</dt><dd><span data-count="12">12</span>+</dd></div>
+          <div><dt>Developers led</dt><dd><span data-count="14">14</span></dd></div>
+          <div><dt>Products shipped</dt><dd><span data-count="5">5</span></dd></div>
+          <div><dt>Industries</dt><dd><span data-count="6">6</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================ CRAFT ============================ -->
+    <section class="sec craft" id="craft">
+      <header class="sec-head reveal">
+        <span class="sec-num">01 — Craft</span>
+        <h2>Watch a screen <em>get built.</em></h2>
+        <p>Every interface we ship goes through the same six passes. Scroll, and the invoice screen on the right goes through them too.</p>
+      </header>
+
+      <div class="craft-grid">
+        <ol class="craft-steps">
+          <li class="craft-step" data-stage="1">
+            <span class="k">01 / Structure</span>
+            <h3>Boxes before beauty.</h3>
+            <p>What goes where, and why. The layout comes from what you need to <i>do</i> on the screen, not from what looks busy.</p>
+          </li>
+          <li class="craft-step" data-stage="2">
+            <span class="k">02 / Type</span>
+            <h3>Hierarchy you read at a glance.</h3>
+            <p>One typeface, a strict scale, real words. The amount due is the loudest thing on the screen because it is the thing that matters.</p>
+          </li>
+          <li class="craft-step" data-stage="3">
+            <span class="k">03 / Colour</span>
+            <h3>Colour that means something.</h3>
+            <p>One accent for action, one signal for status. Nothing is coloured just to decorate it.</p>
+          </li>
+          <li class="craft-step" data-stage="4">
+            <span class="k">04 / Depth</span>
+            <h3>Surfaces with weight.</h3>
+            <p>Radius, shadow and layering tell your eye what can be pressed and what sits behind it.</p>
+          </li>
+          <li class="craft-step" data-stage="5">
+            <span class="k">05 / Motion</span>
+            <h3>Feedback for every tap.</h3>
+            <p>The button answers, the switch slides, the total settles. Motion explains what happened. It never shows off.</p>
+          </li>
+          <li class="craft-step" data-stage="6">
+            <span class="k">06 / Access</span>
+            <h3>Built for everyone who uses it.</h3>
+            <p>Keyboard focus, labels for screen readers, contrast measured against WCAG. I've delivered 508 compliance for clients — here it is measured live, not claimed.</p>
+          </li>
+        </ol>
+
+        <div class="craft-sticky">
+          <div class="device" id="device" data-stage="1">
+            <div class="d-stage-tag"><span id="dStageNum">1</span>/6 · <span id="dStageName">structure</span></div>
+            <div class="d-bar"><i></i><i></i><i></i><span class="w">Invoices</span></div>
+            <div class="d-body">
+              <div class="d-head">
+                <div>
+                  <span class="d-label w">Invoice #1042</span>
+                  <span class="d-client w">Sharma Traders, Pune</span>
+                </div>
+                <span class="d-pill w">Due in 3 days</span>
+              </div>
+              <div class="d-amount w" id="dAmount" data-a11y-contrast>₹47,200</div>
+              <ul class="d-lines">
+                <li><span class="w">Website redesign</span><span class="w">₹30,000</span></li>
+                <li><span class="w">Billing utility</span><span class="w">₹5,000</span></li>
+                <li><span class="w">Hosting &amp; domain · 1 yr</span><span class="w">₹5,000</span></li>
+                <li class="d-tax"><span class="w">GST 18%</span><span class="w">₹7,200</span></li>
+              </ul>
+              <div class="d-row">
+                <span class="w">WhatsApp reminder</span>
+                <button class="d-switch" id="dSwitch" type="button" role="switch" aria-checked="true" aria-label="WhatsApp reminder"><i></i></button>
+              </div>
+              <button class="d-pay w" id="dPay" type="button" data-a11y-contrast>Send invoice</button>
+            </div>
+            <!-- a11y annotations, shown only at stage 6; contrast values are measured by assembly.js -->
+            <span class="a11y-tag t-amount">contrast <b id="cAmount">—</b></span>
+            <span class="a11y-tag t-switch">role=switch · aria-checked</span>
+            <span class="a11y-tag t-pay">contrast <b id="cPay">—</b> · focusable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CLINIC ============================ -->
+    <section class="sec clinic" id="clinic">
+      <header class="sec-head reveal">
+        <span class="sec-num">02 — Fix-it clinic</span>
+        <h2>Tell us the symptom.<br><em>We'll write the prescription.</em></h2>
+        <p>Most software problems are ordinary ones. Pick what sounds like yours — you'll get the diagnosis, the treatment, and roughly what it takes.</p>
+      </header>
+
+      <div class="clinic-grid">
+        <div class="symptoms" id="symptoms" role="group" aria-label="Pick a symptom"></div>
+        <div class="printer">
+          <div class="printer-head"><span class="printer-led"></span><span>STUNITY · DIAGNOSTIC PRINTER</span></div>
+          <div class="printer-slot"></div>
+          <div class="receipt-wrap"><div class="receipt" id="receipt" aria-live="polite"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ REVAMP ============================ -->
+    <section class="sec revamp" id="revamp">
+      <header class="sec-head reveal">
+        <span class="sec-num">03 — Revamp</span>
+        <h2>Same backend. <em>New front end.</em></h2>
+        <p>Your old system still does its job — people just hate using it. We rebuild the screens and leave the business logic exactly where it is. Drag the handle.</p>
+      </header>
+
+      <div class="compare reveal" id="compare" style="--pos: 50%">
+        <!-- 2009: the screen everyone knows -->
+        <div class="cmp cmp-old" aria-hidden="true">
+          <div class="old-title">Customer Master Maintenance - [CUST_MNT_04]</div>
+          <div class="old-menu"><u>F</u>ile &nbsp; <u>E</u>dit &nbsp; <u>V</u>iew &nbsp; <u>R</u>eports &nbsp; <u>H</u>elp</div>
+          <table class="old-form">
+            <tr><td>Cust. Code*</td><td><input value="C-00482" tabindex="-1"></td><td>Status</td><td><select tabindex="-1"><option>ACTIVE</option></select></td></tr>
+            <tr><td>Name*</td><td colspan="3"><input value="SHARMA TRADERS" class="wide" tabindex="-1"></td></tr>
+            <tr><td>Contact No.</td><td><input value="9822XXXXXX" tabindex="-1"></td><td>City</td><td><input value="PUNE" tabindex="-1"></td></tr>
+            <tr><td>Outstanding</td><td><input value="47200.00" tabindex="-1"></td><td>Cr. Limit</td><td><input value="100000.00" tabindex="-1"></td></tr>
+            <tr><td>Remarks</td><td colspan="3"><textarea tabindex="-1">PAYMENT PENDING. CALL BEFORE DISPATCH.</textarea></td></tr>
+          </table>
+          <div class="old-btns"><button tabindex="-1">Save</button><button tabindex="-1">Clear</button><button tabindex="-1">Delete</button><button tabindex="-1">Exit</button></div>
+          <div class="old-status">Record 482 of 1,209 &nbsp;|&nbsp; Mode: EDIT &nbsp;|&nbsp; F2=Search F5=Refresh</div>
+        </div>
+
+        <!-- Today: the same record, the same fields, the same save endpoint -->
+        <div class="cmp cmp-new" aria-hidden="true">
+          <div class="new-top">
+            <div class="new-avatar">ST</div>
+            <div>
+              <div class="new-name">Sharma Traders</div>
+              <div class="new-sub">C-00482 · Pune · <span class="new-pill">Active</span></div>
+            </div>
+            <div class="new-actions"><span class="new-btn ghost">Call</span><span class="new-btn">Save changes</span></div>
+          </div>
+          <div class="new-cards">
+            <div class="new-card warn"><span>Outstanding</span><b>₹47,200</b><div class="new-meter"><i style="width:47%"></i></div><small>47% of ₹1,00,000 limit</small></div>
+            <div class="new-card"><span>Contact</span><b>9822 ••••••</b><small>Tap to call or WhatsApp</small></div>
+          </div>
+          <div class="new-note"><span class="new-note-k">Note</span>Payment pending — call before dispatch.</div>
+          <div class="new-foot"><span class="kbd">/</span> search 1,209 customers</div>
+        </div>
+
+        <div class="cmp-label l-old">2009</div>
+        <div class="cmp-label l-new">Today</div>
+        <div class="cmp-handle" id="compareHandle" role="slider" tabindex="0" aria-label="Compare old and new screen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <span class="cmp-knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ LAB ============================ -->
+    <section class="sec lab" id="lab">
+      <header class="sec-head reveal">
+        <span class="sec-num">04 — Lab</span>
+        <h2>Small tools, <em>working right here.</em></h2>
+        <p>We build utilities that do one job well — no sign-up, no subscription, nothing uploaded. These three run entirely in your browser. Try them.</p>
+      </header>
+
+      <div class="lab-shell reveal">
+        <div class="lab-tabs" role="tablist" aria-label="Tools">
+          <button role="tab" id="tab-clean" aria-controls="panel-clean" aria-selected="true">List cleaner</button>
+          <button role="tab" id="tab-contrast" aria-controls="panel-contrast" aria-selected="false" tabindex="-1">Contrast checker</button>
+          <button role="tab" id="tab-shrink" aria-controls="panel-shrink" aria-selected="false" tabindex="-1">Image shrinker</button>
+        </div>
+
+        <!-- List cleaner -->
+        <div class="lab-panel" role="tabpanel" id="panel-clean" aria-labelledby="tab-clean">
+          <div class="lab-io">
+            <label class="field">
+              <span>Paste a messy list — names, emails, phone numbers, one per line</span>
+              <textarea id="cleanIn" rows="9" spellcheck="false">  rahul SHARMA
+priya.k@GMAIL.com
+Rahul Sharma
++91 98220 12345
+  anita desai
+PRIYA.K@gmail.com
+
+9822012345
+ANITA DESAI
+suresh  patil</textarea>
+            </label>
+            <div class="field">
+              <span>Cleaned</span>
+              <pre class="lab-out" id="cleanOut" tabindex="0"></pre>
+            </div>
+          </div>
+          <div class="lab-bar">
+            <label class="chk"><input type="checkbox" id="optDedupe" checked> Remove duplicates</label>
+            <label class="chk"><input type="checkbox" id="optCase" checked> Fix capitals</label>
+            <label class="chk"><input type="checkbox" id="optSort"> Sort A–Z</label>
+            <label class="chk"><input type="checkbox" id="optPhone" checked> Normalise phones</label>
+            <span class="lab-stat" id="cleanStat"></span>
+            <button class="btn btn-sm btn-ghost" id="cleanCopy" type="button">Copy result</button>
+          </div>
+        </div>
+
+        <!-- Contrast checker -->
+        <div class="lab-panel" role="tabpanel" id="panel-contrast" aria-labelledby="tab-contrast" hidden>
+          <div class="contrast-grid">
+            <div class="contrast-inputs">
+              <label class="field color-field"><span>Text colour</span><span class="color-row"><input type="color" id="fgPick" value="#ff5b2e"><input type="text" id="fgHex" value="#ff5b2e" maxlength="7" spellcheck="false" aria-label="Text colour hex"></span></label>
+              <label class="field color-field"><span>Background</span><span class="color-row"><input type="color" id="bgPick" value="#ffffff"><input type="text" id="bgHex" value="#ffffff" maxlength="7" spellcheck="false" aria-label="Background colour hex"></span></label>
+              <button class="btn btn-sm btn-ghost" id="swapColors" type="button">⇅ Swap</button>
+            </div>
+            <div class="contrast-preview" id="contrastPreview">
+              <div class="cp-ratio"><b id="ratio">—</b><span>: 1</span></div>
+              <p class="cp-big">Large heading text</p>
+              <p class="cp-small">Body text at normal size is where most sites fail — grey on white looks elegant and reads badly.</p>
+            </div>
+            <ul class="contrast-verdicts" id="verdicts"></ul>
+          </div>
+        </div>
+
+        <!-- Image shrinker -->
+        <div class="lab-panel" role="tabpanel" id="panel-shrink" aria-labelledby="tab-shrink" hidden>
+          <label class="drop" id="drop">
+            <input type="file" id="shrinkFile" accept="image/*">
+            <span class="drop-icon" aria-hidden="true">⤓</span>
+            <b>Drop a photo here, or click to choose one</b>
+            <small>Heavy photos are the #1 reason small-business sites are slow. Nothing leaves your device.</small>
+          </label>
+          <div class="shrink-result" id="shrinkResult" hidden>
+            <div class="shrink-thumb"><img id="shrinkImg" alt="Your image, compressed"></div>
+            <div class="shrink-info">
+              <div class="shrink-nums"><div><span>Before</span><b id="sizeBefore">—</b></div><div class="arrow" aria-hidden="true">→</div><div><span>After</span><b id="sizeAfter">—</b></div></div>
+              <div class="shrink-saved" id="sizeSaved"></div>
+              <label class="field"><span>Quality <b id="qVal">72</b>%</span><input type="range" id="quality" min="30" max="95" value="72"></label>
+              <label class="field"><span>Longest side <b id="wVal">1600</b>px</span><input type="range" id="maxW" min="480" max="3200" step="80" value="1600"></label>
+              <a class="btn btn-accent btn-sm" id="shrinkSave" download="stunity-shrunk.jpg" href="#">Save the smaller image</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WORK ============================ -->
+    <section class="sec work" id="work">
+      <header class="sec-head reveal">
+        <span class="sec-num">05 — Work</span>
+        <h2>Shipped, live, <em>and in use.</em></h2>
+        <p>Built after hours under the Stunity Tech name. Every one of these is live — open it and try it.</p>
+      </header>
+      <ol class="work-list" id="workList"></ol>
+      <div class="work-float" id="workFloat" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============================ PRATEEK ============================ -->
+    <section class="sec person" id="prateek">
+      <header class="sec-head reveal">
+        <span class="sec-num">06 — The person</span>
+        <h2>Behind the studio: <em>Prateek Heda.</em></h2>
+      </header>
+
+      <div class="person-grid">
+        <div class="person-card reveal">
+          <div class="monogram" aria-hidden="true"><span>PH</span><i></i></div>
+          <h3>Prateek Heda</h3>
+          <p class="person-role">UI Technical Lead · Frontend Architect · Engineering Lead</p>
+          <p class="person-loc" data-cfg="city">Pune, India</p>
+          <p class="person-bio">I started as a Java developer in 2013, moved to the front end because that's where people actually meet software, and never looked back. Twelve years on, I lead UI teams by day — most recently rebuilding legacy enterprise screens without touching the backend beneath them.</p>
+          <p class="person-bio">Stunity Tech is where I build directly for people: schools, investors, small businesses. Same standards as enterprise work, without the layers in between.</p>
+          <div class="person-links">
+            <a class="btn btn-sm btn-ghost" data-cfg-href="linkedin" href="https://www.linkedin.com/in/hedaprateek" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn btn-sm btn-ghost" data-cfg-href="github" href="https://github.com/hedaprateek" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="term reveal">
+          <div class="term-bar"><i></i><i></i><i></i><span>~/prateek — career</span></div>
+          <div class="term-body">
+            <p class="term-cmd"><span class="term-ps">$</span> git log --graph --oneline --career</p>
+            <ol class="gitlog" id="gitlog"></ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="person-grid person-grid-2">
+        <div class="term code reveal">
+          <div class="term-bar"><i></i><i></i><i></i><span>prateek.config.ts</span></div>
+          <pre class="code-body" id="configCode"></pre>
+        </div>
+        <ul class="awards reveal" id="awards"></ul>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="sec contact" id="contact">
+      <div class="contact-big reveal" aria-hidden="true">
+        <span>Tell us what's</span>
+        <span class="glitch" data-text="broken.">broken.</span>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <h2 class="sr-only">Contact Stunity Tech</h2>
+          <label class="field"><span>Your name</span><input id="cName" autocomplete="name" required></label>
+          <label class="field"><span>What do you need?</span>
+            <select id="cTopic">
+              <option>A new website</option>
+              <option>A custom tool or utility</option>
+              <option>Revamp an old system</option>
+              <option>Fix something that's broken</option>
+              <option>Speed, SEO or accessibility</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label class="field"><span>Tell us a little more</span><textarea id="cMsg" rows="5" placeholder="What's happening, and what would 'fixed' look like?"></textarea></label>
+          <p class="form-error" id="formError" role="alert"></p>
+          <div class="contact-send">
+            <button class="btn btn-accent" type="submit" data-via="whatsapp">Send on WhatsApp</button>
+            <button class="btn btn-ghost" type="button" id="sendEmail">Send by email</button>
+          </div>
+        </form>
+
+        <div class="contact-direct reveal">
+          <p class="k">Or reach us directly</p>
+          <a class="direct" data-cfg-mail href="mailto:prateekheda@yahoo.com"><span>Email</span><b data-cfg="email">prateekheda@yahoo.com</b></a>
+          <a class="direct" data-cfg-wa href="https://wa.me/919021306979" target="_blank" rel="noopener"><span>WhatsApp</span><b data-cfg="phoneDisplay">+91 90213 06979</b></a>
+          <a class="direct" data-cfg-href="linkedin" href="https://www.linkedin.com/in/hedaprateek" target="_blank" rel="noopener"><span>LinkedIn</span><b>/in/hedaprateek</b></a>
+          <a class="direct" data-cfg-href="github" href="https://github.com/hedaprateek" target="_blank" rel="noopener"><span>GitHub</span><b>@hedaprateek</b></a>
+          <p class="contact-promise">We reply within a day. First conversation is free, and we'll tell you honestly if you don't need us.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-row">
+      <span>© <span id="year">2026</span> Stunity Tech · Pune, India</span>
+      <span class="foot-note">Hand-built. No templates, no frameworks, no trackers. Press <span class="kbd">I</span> and look.</span>
+    </div>
+    <!-- The studio credit, same wording everywhere; filled from config.js -->
+    <div class="vendor-footer" id="vendorFooter"><b>Stunity Tech</b><span class="vf-dot">·</span>by Prateek</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/xray.js"></script>
+  <script src="js/inspect.js"></script>
+  <script src="js/assembly.js"></script>
+  <script src="js/clinic.js"></script>
+  <script src="js/revamp.js"></script>
+  <script src="js/lab.js"></script>
+  <script src="js/work.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/boot.js"></script>
+</body>
+</html>
